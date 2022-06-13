@@ -1,0 +1,52 @@
+﻿@model IEnumerable<WebHocAVNew.Models.Giangvien>
+
+@{
+    ViewBag.Title = "ListGV";
+    Layout = "~/Views/Shared/Layoutql.cshtml";
+}
+
+<h2>ListGV</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.HoTenGV)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SDT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DCGV)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NgaySinhGV)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.HoTenGV)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SDT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DCGV)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NgaySinhGV)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>
